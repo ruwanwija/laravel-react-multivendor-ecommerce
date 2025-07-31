@@ -27,6 +27,8 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Resources\Pages\Page;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use App\Filament\Resources\ProductResource\Pages\ProductVariationTypes;
+use App\Filament\Resources\ProductResource\Pages\ProductVariations;
+use App\Models\ProductVariation;
 
 class ProductResource extends Resource
 {
@@ -162,6 +164,7 @@ class ProductResource extends Resource
             'edit' => Pages\EditProduct::route('/{record}/edit'),
             'images' => Pages\ProductImages::route('/{record}/images'),
             'variation_types' => Pages\ProductVariationTypes::route('/{record}/variation_types'),
+            'variations' => Pages\ProductVariations::route('/{record}/variations'),
         ];
     }
     public static function getRecordSubNavigation(\Filament\Resources\Pages\Page $page): array
@@ -171,6 +174,7 @@ class ProductResource extends Resource
                 EditProduct::class,
                 ProductImages::class,
                 ProductVariationTypes::class,
+                ProductVariations::class,
             ]);
     }
     
